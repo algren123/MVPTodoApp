@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Title from "./components/Title";
+import TodoItem, { TTodoItem } from "./components/TodoItem";
 
 function App() {
+  // TODO: Add state
+  const [todos, setTodos] = React.useState<TTodoItem[]>([]);
+
+  const [description, setDescription] = React.useState<string>("");
+
+  // TODO: Add function to add todo
+  const addTodo = () => {};
+  // TODO: Add function to toggle todo
+  const toggleTodo = () => {};
+
+  // TODO: Add function to remove todo
+  const removeTodo = () => {};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title />
+      <input type="text" placeholder="Add Todo" />
+      <button type="button">Add</button>
+      <TodoItem description="Finish training" completed={false} />
+      <TodoItem description="Write training" completed={true} />
     </div>
   );
 }
