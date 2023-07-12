@@ -1,11 +1,12 @@
 import React from "react";
 
-export type TTodoItem = {
+// TODO: add ID
+interface ITodoItem {
   description: string;
   completed: boolean;
-};
+}
 
-const TodoItem: React.FC<TTodoItem> = ({ description, completed }) => {
+const TodoItem: React.FC<ITodoItem> = ({ description, completed }) => {
   return (
     <div>
       <input type="checkbox" checked={completed} />
